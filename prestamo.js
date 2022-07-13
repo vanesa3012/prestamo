@@ -1,7 +1,5 @@
 
-
-
-let tasa_interes3 = 21;
+/*let tasa_interes3 = 21;
 let tasa_interes6 = 30; 
 let tasa_interes9 = 40; 
 let tasa_interes12 = 60; 
@@ -15,46 +13,69 @@ function calcular_monto_total (capital, numero_cuotas){
     if(capital < 250000 && numero_cuotas == 3){
         
         let valor_total_prestamo = capital + (interes_total3); 
-        console.log("Devolvés:", valor_total_prestamo);
+        console.log("Devolverías:", valor_total_prestamo);
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas3()
     }
     else if(capital < 250000 && numero_cuotas == 6){
 
         let valor_total_prestamo = capital + (interes_total6); 
-        console.log("Devolvés:", valor_total_prestamo);
+        console.log("Devolverías:", valor_total_prestamo);
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas6()
     }
     else if(capital < 250000 && numero_cuotas == 9){
         
         let valor_total_prestamo = capital + (interes_total9);
-        console.log("Devolvés:", valor_total_prestamo, "en", numero_cuotas);
-
-        
+        console.log("Devolverías:", valor_total_prestamo, "en", numero_cuotas); 
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas9()  
     }
     else if(capital < 250000 && numero_cuotas == 12){
 
         let valor_total_prestamo = capital + (interes_total12);
-        console.log("Devolvés:", valor_total_prestamo);
+        console.log("Devolverías:", valor_total_prestamo);
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas12()
     }
     else if(capital < 250000 && numero_cuotas == 18){
 
         let valor_total_prestamo = capital + (interes_total18);
-        console.log("Devolvés:", valor_total_prestamo);
+        console.log("Devolverías:", valor_total_prestamo);
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas18()
+
     }
     else if(capital < 250000 && numero_cuotas == 24){
 
         let valor_total_prestamo = capital + (interes_total24);
-        console.log("Devolvés:", valor_total_prestamo);
+        console.log("Devolverías:", valor_total_prestamo);
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas24()
     }
     else if(capital < 250000 && numero_cuotas == 36){
 
         let valor_total_prestamo = capital + (interes_total36);
-        console.log("Devolvés:", valor_total_prestamo);
+        console.log("Devolverías:", valor_total_prestamo);
+        console.log("Mirá el detalle de tus cuotas");
+        console.log("Devolvés", numero_cuotas,"cuotas de:");
+        detallar_cuotas36()
     }
 
     else{
-        console.log("Algunos de los datos ingresados no es correcto, inténtalo de nuevo!!")
+        console.log("Algunos de los datos ingresados no es correcto, inténtalo de nuevo!!");
+        
     }
 
 }
+
+
 
 let capital = parseInt(prompt("¿Cuánto necesitas?"));
 let numero_cuotas = parseInt(prompt("¿En cuántas cuotas lo devolvés?: 3, 6, 9, 12, 18, 24, 36"));
@@ -77,49 +98,101 @@ let cuota_mes36 = (capital + interes_total36)/ numero_cuotas;
 
 calcular_monto_total(capital, numero_cuotas);
 
-console.log("Mirá el detalle de tus cuotas");
 
-console.log("Devolvés en 3 cuotas");
+function detallar_cuotas3(){
     for(i = 0; i < 3; i++){
-        console.log("Pagás por mes: $", cuota_mes3);
+        let cuota = cuota_mes3; 
+        console.log(cuota);
     }
+}
 
-    console.log("Devolvés en 6 cuotas")
+
+function detallar_cuotas6(){
     for(i = 0; i < 6; i++){
-        console.log("Pagás por mes: $", cuota_mes6);
+        let cuota = cuota_mes6; 
+        console.log(cuota);
     }
+}
 
-    console.log("Devolvés en 9 cuotas")
+function detallar_cuotas9(){
     for(i = 0; i < 9; i++){
-        console.log("Pagás por mes: $", cuota_mes9);
+        let cuota = cuota_mes9; 
+        console.log(cuota);
     }
+}
 
-    console.log("Devolvés en 12 cuotas")
+function detallar_cuotas12(){
     for(i = 0; i < 12; i++){
-        console.log("Pagás por mes: $", cuota_mes12);
+        let cuota = cuota_mes12; 
+        console.log(cuota);
     }
+}
 
-    console.log("Devolvés en 18 cuotas")
+function detallar_cuotas18(){
     for(i = 0; i < 18; i++){
-        console.log("Pagás por mes: $", cuota_mes18);
+        let cuota = cuota_mes18; 
+        console.log(cuota);
     }
+}
 
-    console.log("Devolvés en 24 cuotas")
+function detallar_cuotas24(){
     for(i = 0; i < 24; i++){
-        console.log("Pagás por mes: $", cuota_mes24);
+        let cuota = cuota_mes24; 
+        console.log(cuota);
     }
+}
 
-    console.log("Devolvés en 36 cuotas")
+function detallar_cuotas36(){
     for(i = 0; i < 36; i++){
-        console.log("Pagás por mes: $", cuota_mes36);
+        let cuota = cuota_mes36; 
+        console.log(cuota);
     }
+}
 
-console.log("Gracias por elegirnos!!")
+console.log("Gracias por elegirnos!!");*/
+
+//Creo array de objetos, contiene los préstamos otorgados a nuestros clientes. 
+
+class Clientes{
+    constructor(nombre, apellido, dni, capital, cuotas){
+
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.capital = capital;
+        this.cuotas = cuotas;
+    }
+}
+
+let lista_clientes = [];
+
+for(let i = 0; i < 2; i++){
+
+    let nombre = prompt("Ingrese su nombre");
+    let apellido = prompt("Ingrese su apellido");
+    let dni = prompt("Ingrese su número de DNI");
+    let capital = prompt("¿Cuánto sacaste?");
+    let cuotas = prompt("En cuántas cuotas?");
+
+    let cliente_nuevo = new Clientes (nombre, apellido, dni, capital, cuotas);
+
+    lista_clientes.push(cliente_nuevo);
+
+}
+
+console.log(lista_clientes);
 
 
 
+//Utilizo el FOR OF para iterar cada uno de los clientes, puedo ver sus datos, capital que solicitó y cuotas
 
+for(let solicitante of lista_clientes){
+    console.log("Cliente:", solicitante.nombre, solicitante.apellido);
+    console.log("DNI", solicitante.dni);
+    console.log("Solicitó: $", solicitante.capital);
+    console.log("en:", solicitante.cuotas);
+    console.log("*********************************************")
+}
 
-    
-
-
+/*lista_clientes.push(email);
+console.log("Nuevo dato en la lista", lista_clientes);*/
