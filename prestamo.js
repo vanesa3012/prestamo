@@ -151,14 +151,14 @@ function detallar_cuotas36(){
 
 console.log("Gracias por elegirnos!!");*/
 
+
 //Creo array de objetos, contiene los préstamos otorgados a nuestros clientes. 
 
 class Clientes{
-    constructor(nombre, apellido, dni, capital, cuotas){
+    constructor(nombre, apellido, capital, cuotas){
 
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
         this.capital = capital;
         this.cuotas = cuotas;
     }
@@ -166,15 +166,14 @@ class Clientes{
 
 let lista_clientes = [];
 
-for(let i = 0; i < 2; i++){
+for(let i = 0; i < 3; i++){
 
     let nombre = prompt("Ingrese su nombre");
     let apellido = prompt("Ingrese su apellido");
-    let dni = prompt("Ingrese su número de DNI");
     let capital = prompt("¿Cuánto sacaste?");
     let cuotas = prompt("En cuántas cuotas?");
 
-    let cliente_nuevo = new Clientes (nombre, apellido, dni, capital, cuotas);
+    let cliente_nuevo = new Clientes (nombre, apellido, capital, cuotas);
 
     lista_clientes.push(cliente_nuevo);
 
@@ -188,11 +187,37 @@ console.log(lista_clientes);
 
 for(let solicitante of lista_clientes){
     console.log("Cliente:", solicitante.nombre, solicitante.apellido);
-    console.log("DNI", solicitante.dni);
     console.log("Solicitó: $", solicitante.capital);
-    console.log("en:", solicitante.cuotas);
+    console.log("en:", solicitante.cuotas, "cuotas");
     console.log("*********************************************")
 }
 
-/*lista_clientes.push(email);
-console.log("Nuevo dato en la lista", lista_clientes);*/
+// Utilizo Método FIND para buscar alguna dato sobre el cliente, en este caso el apellido
+
+function buscar_clientes(cliente){
+    return cliente.apellido == "Perez"
+}
+
+let resultado_busqueda = lista_clientes.find(buscar_clientes);
+console.log("El cliente es:", resultado_busqueda);
+
+//Utilizo método FILTER y busco los préstamos mayores a 10 mil
+
+function buscar_monto(prestamo){
+    return prestamo.capital >= 10000
+}
+
+let resultado_busqueda_capital = lista_clientes.filter(buscar_monto);
+console.log("Los prestamos superiores a 10 mil son:", resultado_busqueda_capital);
+
+//Utilizo metodo REDUCE, quiero calcular el total de prestamos que se sacaron
+
+function calcular_total_prestamos( acumulador, monto){
+    acumulador = acumulador + monto.capital;
+    return acumulador 
+}
+
+let prestamos_total = lista_clientes.reduce(calcular_total_prestamos);
+console.log("Total de préstamos solicitados en el dia:", prestamos_total);
+
+//Me toma el nombre de la class Cliente, no me doy cuenta del error
