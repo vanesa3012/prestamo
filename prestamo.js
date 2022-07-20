@@ -1,5 +1,5 @@
 
-/*let tasa_interes3 = 21;
+let tasa_interes3 = 21;
 let tasa_interes6 = 30; 
 let tasa_interes9 = 40; 
 let tasa_interes12 = 60; 
@@ -149,12 +149,12 @@ function detallar_cuotas36(){
     }
 }
 
-console.log("Gracias por elegirnos!!");*/
+console.log("Gracias por elegirnos!!");
 
 
 //Creo array de objetos, contiene los préstamos otorgados a nuestros clientes. 
 
-class Clientes{
+/*class Clientes{
     constructor(nombre, apellido, capital, cuotas){
 
         this.nombre = nombre;
@@ -217,7 +217,16 @@ function calcular_total_prestamos( acumulador, monto){
     return acumulador 
 }
 
-let prestamos_total = lista_clientes.reduce(calcular_total_prestamos);
-console.log("Total de préstamos solicitados en el dia:", prestamos_total);
+let prestamos_total_dia = lista_clientes.reduce(calcular_total_prestamos, 0);
+console.log("Total de préstamos solicitados en el dia:", prestamos_total_dia);*/
 
-//Me toma el nombre de la class Cliente, no me doy cuenta del error
+//Ver porque no suma
+
+
+function simular(){
+    let cantidad = document.getElementById("prestamo");
+console.log("Simule su préstamo", cantidad.value);
+
+}
+
+
