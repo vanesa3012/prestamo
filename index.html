@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6a847c4bea.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css">
     <title>Te presto</title>
 </head>
 <body>
@@ -17,39 +17,43 @@
         </nav>
         
         <main>
+
             <div class="container-inicial">
                 <h1>Préstamos</h1>
                 <p>Podés pedir hasta <strong>$ 250.000</strong></p>
                 <p>En 36 cuotas fijas</p>
-                <button onclick="simular()">Simular préstamo</button>
             </div>
+
             <form class="container-calculador">
                 <h1>Simulá tu préstamo</h1>
                 <p>¿Cuánto necesitas?</p>   
-                <input type="number" id="prestamo">
-                <p>¿En cuántas cuotas?</p>    
-                <select name="" id="">
-                    <option value="">3</option>
-                    <option value="">6</option>
-                    <option value="">9</option>
-                    <option value="">12</option>
-                    <option value="">18</option>
-                    <option value="">24</option>
-                    <option value="">36</option>
+                <input type="number" id="prestamo" max="250000" min="1000" value="1000">
+                <p>¿En cuántas cuotas lo devolvés?</p>    
+                <select name="" id="selector">
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                    <option value="12">12</option>
+                    <option value="18">18</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
                 </select>
+            </form>    
+                
+                <button id="simulador">Simular préstamo</button>                           
                 <p>Devolverías</p>
-                <input type="number" placeholder="Total a devolver">
-            </form>
-            <div>
+                <input type="number" placeholder="Total a devolver" id="devuelve">
+            <div id="container_detalle">
                 <p>Mirá el detalle de las cuotas</p>
-                <button>Detalle</button>
+                <button id="ver">Detalle</button>
             </div>
+            <p>Gracias por elegirnos!!!</p>
             <h1>Mis prestamos</h1>
             <button>Ver</button>
         </main>
     </header>
 
 
-    <script src="prestamo.js"></script>
+    <script src="./js/prestamo.js"></script>
 </body>
 </html>
