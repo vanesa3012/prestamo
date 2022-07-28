@@ -16,7 +16,7 @@
             </div>
         </nav>
         
-        <main>
+        <main id="main">
 
             <div class="container-inicial">
                 <h1>Préstamos</h1>
@@ -27,7 +27,7 @@
             <form class="container-calculador">
                 <h1>Simulá tu préstamo</h1>
                 <p>¿Cuánto necesitas?</p>   
-                <input type="number" id="prestamo" max="250000" min="1000" value="1000">
+                <input type="number" placeholder="$ 0" id="prestamo">
                 <p>¿En cuántas cuotas lo devolvés?</p>    
                 <select name="" id="selector">
                     <option value="3">3</option>
@@ -42,14 +42,16 @@
                 
                 <button id="simulador">Simular préstamo</button>                           
                 <p>Devolverías</p>
-                <input type="number" placeholder="Total a devolver" id="devuelve">
+                <input type="number" placeholder="$ 0" id="devuelve">
             <div id="container_detalle">
                 <p>Mirá el detalle de las cuotas</p>
                 <button id="ver">Detalle</button>
             </div>
-            <p>Gracias por elegirnos!!!</p>
-            <h1>Mis prestamos</h1>
-            <button>Ver</button>
+            <button id="obtener">Lo quiero!</button>
+            <button id="terminar">No, gracias.</button>
+            
+            
+            
         </main>
     </header>
 

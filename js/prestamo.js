@@ -1,10 +1,13 @@
 
+//Empieza la parte donde se realiza el simulador de prestamo
+
 let miInput = document.getElementById("prestamo");
 let devuelve = document.getElementById("devuelve");
 let selector = document.getElementById("selector");
 let container_detalle = document.getElementById("container_detalle");
 let monto_interes = 0;
 let monto_cuota = 0;
+let cantidad_cuotas = 0;
 
 
 
@@ -17,30 +20,44 @@ document.getElementById("simulador").addEventListener("click", () =>{
     switch (selector.value) {
         case "3":
             monto_interes = parseFloat(miInput.value) * 1.21;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 3;
         break;
 
         case "6":
             monto_interes = parseFloat(miInput.value) * 1.3;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 6;
         break;
 
         case "9":
             monto_interes = parseFloat(miInput.value) * 1.4;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 9;
         break;
 
         case "12":
             monto_interes = parseFloat(miInput.value) * 1.6;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 12;
         break;
 
         case "18":
             monto_interes = parseFloat(miInput.value) * 1.9;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 18;
         break;
 
         case "24":
             monto_interes = parseFloat(miInput.value) * 2.2;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 24;
         break;
 
         case "36":
             monto_interes = parseFloat(miInput.value) * 2.8;
+            monto_interes = monto_interes.toFixed(2)
+            cantidad_cuotas = 36;
         break;
     }
 
@@ -49,17 +66,65 @@ document.getElementById("simulador").addEventListener("click", () =>{
 
 
 document.getElementById("ver").addEventListener("click", () =>{
-    
+
     monto_cuota = monto_interes/parseInt(selector.value);
     monto_cuota = monto_cuota.toFixed(2);
+    console.log(monto_cuota);
     const valor = document.createElement("div");
-    valor.innerText = monto_cuota;
+    valor.innerText = `Devolvés ${cantidad_cuotas} cuotas de $ ${monto_cuota} cada una.`;
     container_detalle.appendChild(valor);
 })
 
-/*
 
-//Creo array de objetos, contiene los préstamos otorgados a nuestros clientes. 
+let lista_clientes = [];
+
+function traer_datos(){
+    const main = document.getElementById("main");
+    const formulario = document.createElement("form");
+    formulario.innerHTML = `
+            <label>Nombre <input type="text" id="nombre"></label>
+            <label>Apellido <input type="text" id="apellido"></label>
+            <label>DNI <input type="number" id="dni"></label>
+            <button id="confirma">Confirmar</button>    
+    `
+    main.appendChild(formulario);
+
+    document.getElementById("confirma").addEventListener("click", (e) =>{
+        e.preventDefault(); //para evitar que se vaya el formulario porque al estar al final se tomo como un submit
+        let nombre_usuario = document.getElementById("nombre");
+        let apellido_usuario = document.getElementById("apellido");
+        let dni_usuario = document.getElementById("dni");
+        let usuario = {"nombre": nombre_usuario.value, "apellido": apellido_usuario.value, "dni": dni_usuario.value};
+        
+         //guardo datos en json
+        lista_clientes.push(usuario);
+        localStorage.setItem("clientes", JSON.stringify(lista_clientes));
+        
+    })
+    
+    //recupero los datos
+    //localStorage.getItem("clientes"); 
+    //console.log(JSON.parse(clientes));
+
+}
+
+let obtener = document.getElementById("obtener");
+obtener.addEventListener("click", traer_datos);
+
+function finalizar(){
+    const main = document.getElementById("main");
+    let despedir = document.createElement("p");
+    despedir.innerHTML = `Te esperamos nuevamente. Gracias por tu consulta!!`
+    main.appendChild(despedir);
+}
+
+let saludar = document.getElementById("terminar");
+saludar.addEventListener("click", finalizar);
+
+
+/*Creo array de objetos, contiene los préstamos otorgados a nuestros clientes. 
+
+let lista_clientes = [];
 
 class Clientes{
     constructor(nombre, apellido, capital, cuotas){
@@ -69,26 +134,9 @@ class Clientes{
         this.capital = capital;
         this.cuotas = cuotas;
     }
+
+    lista_clientes.push();
 }
-
-let lista_clientes = [];
-
-for(let i = 0; i < 3; i++){
-
-    let nombre = prompt("Ingrese su nombre");
-    let apellido = prompt("Ingrese su apellido");
-    let capital = prompt("¿Cuánto sacaste?");
-    let cuotas = prompt("En cuántas cuotas?");
-
-    let cliente_nuevo = new Clientes (nombre, apellido, capital, cuotas);
-
-    lista_clientes.push(cliente_nuevo);
-
-}
-
-console.log(lista_clientes);
-
-
 
 //Utilizo el FOR OF para iterar cada uno de los clientes, puedo ver sus datos, capital que solicitó y cuotas
 
@@ -128,5 +176,9 @@ let prestamos_total_dia = lista_clientes.reduce(calcular_total_prestamos, 0);
 console.log("Total de préstamos solicitados en el dia:", prestamos_total_dia);
 
 //Ver porque no suma*/
+
+
+//Almaceno los datos del cliente que quiere el prestamo
+
 
 
