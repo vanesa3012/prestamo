@@ -10,13 +10,10 @@ let monto_cuota = 0;
 let cantidad_cuotas = 0;
 
 
-
+//Apliqué operador ternario
 document.getElementById("simulador").addEventListener("click", () =>{
-    if(parseInt(miInput.value) < 1000 ){
-        alert("El monto mínimo es $1000")
-        miInput.value = "1000"
-    }    
-    
+    parseInt(miInput.value) < 1000 ? alert("El monto mínimo es $1000") : miInput.value = "1000"
+        
     switch (selector.value) {
         case "3":
             monto_interes = parseFloat(miInput.value) * 1.21;
@@ -65,7 +62,7 @@ document.getElementById("simulador").addEventListener("click", () =>{
 });
 
 
-document.getElementById("ver").addEventListener("click", () =>{
+document.getElementById("ver").addEventListener("click", ()=>{
 
     monto_cuota = monto_interes/parseInt(selector.value);
     monto_cuota = monto_cuota.toFixed(2);
@@ -110,6 +107,7 @@ function traer_datos(){
 
 let obtener = document.getElementById("obtener");
 obtener.addEventListener("click", traer_datos);
+
 
 function finalizar(){
     const main = document.getElementById("main");
