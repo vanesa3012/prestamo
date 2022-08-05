@@ -12,7 +12,17 @@ let cantidad_cuotas = 0;
 
 //Apliqué operador ternario
 document.getElementById("simulador").addEventListener("click", () =>{
-    parseInt(miInput.value) < 1000 ? alert("El monto mínimo es $1000") : miInput.value = "1000"
+    parseInt(miInput.value) < 1000 ?  Swal.fire({
+        position: 'top',
+        width: 300,
+        showClass: {
+            popup: 'animate__animated animate__bounceInDown'
+        },
+        icon: 'warning',
+        title: 'El monto mínimo es $1000',
+        showConfirmButton: true,
+    }): miInput.value = "1000"
+
         
     switch (selector.value) {
         case "3":
@@ -98,15 +108,24 @@ function traer_datos(){
         localStorage.setItem("clientes", JSON.stringify(lista_clientes));
         
     })
-    
-    //recupero los datos
-    //localStorage.getItem("clientes"); 
-    //console.log(JSON.parse(clientes));
-
 }
 
 let obtener = document.getElementById("obtener");
 obtener.addEventListener("click", traer_datos);
+
+document.getElementById("confirma");
+confirma.addEventListener("click", () =>{
+    Swal.fire({
+        position: 'top',
+        width: 300,
+        showClass: {
+            popup: 'animate__animated animate__bounceInDown'
+        },
+        icon: 'warning',
+        title: 'El monto mínimo es $1000',
+        showConfirmButton: true,
+    }) 
+})
 
 
 function finalizar(){
