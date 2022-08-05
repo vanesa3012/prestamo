@@ -21,9 +21,9 @@ document.getElementById("simulador").addEventListener("click", () =>{
         icon: 'warning',
         title: 'El monto mínimo es $1000',
         showConfirmButton: true,
-    }): miInput.value = "1000"
+    }): miInput.value >= "1000";
 
-        
+    
     switch (selector.value) {
         case "3":
             monto_interes = parseFloat(miInput.value) * 1.21;
@@ -112,20 +112,6 @@ function traer_datos(){
 
 let obtener = document.getElementById("obtener");
 obtener.addEventListener("click", traer_datos);
-
-document.getElementById("confirma");
-confirma.addEventListener("click", () =>{
-    Swal.fire({
-        position: 'top',
-        width: 300,
-        showClass: {
-            popup: 'animate__animated animate__bounceInDown'
-        },
-        icon: 'warning',
-        title: 'El monto mínimo es $1000',
-        showConfirmButton: true,
-    }) 
-})
 
 
 function finalizar(){
