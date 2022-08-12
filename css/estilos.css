@@ -13,7 +13,6 @@ nav{
 
 .container-navegacion{
     display: flex;
-    flex-direction: row;
     gap: 10px;
 }
 
@@ -23,4 +22,13 @@ nav{
 
 .boton-simulador{
     background-color: blueviolet;
+}
+
+#caja1{
+    display: inline-block;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-end;
+    border-color: azure;
+    
 }

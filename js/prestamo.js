@@ -138,32 +138,31 @@ function finalizar(){
 let saludar = document.getElementById("terminar");
 saludar.addEventListener("click", finalizar);
 
-//caja 1
-let temperaturaActual = document.getElementById("temperatura-actual")
-let temperaturaMax = document.getElementById("temperatura-max")
-let temperaturaMin = document.getElementById("temperatura-min")
-
-//caja 2
-
-let imagen = document.getElementById("icono")
-let temperaturaDescripcion = document.getElementById("descripcion")
-
-
-        //tempetura = data.main.temp
-        //tempeturaMaxima = data.main.temp_max
-        //tempeturaMinima = data.main.temp_min
-        //descrpcio = data.weather[0].description
-        //icono = data.weather[0].icon
 
 fetch("https://api.openweathermap.org/data/2.5/weather?q=Cordoba&lang=es&units=metric&appid=36498ac6bf1c3965a2397bae524a2d19")
     .then(response=> response.json())
     .then(data=>{
-        console.log("Temperatura", data.main.temp)
-        console.log("Temp. Max.", data.main.temp_max)
-        console.log("Temp. Min.", data.main.temp_min)
-        console.log(data.weather[0].description)
-        console.log(data.weather[0].icon)
-    })
+
+        //Traigo los datos del clima desde la api
+        temperatura = data.main.temp;
+        temperaturaMaxima = data.main.temp_max;
+        temperaturaMinima = data.main.temp_min;
+        descripcion = data.weather[0].description;
+        imagen = data.weather[0].icon;
+
+
+        
+//caja 1
+    document.getElementById("temperatura-actual").innerHTML = `${temperatura} °C`;
+    document.getElementById("temperatura-max").innerHTML = `${temperaturaMaxima} °C`;
+    document.getElementById("temperatura-min").innerHTML = `${temperaturaMinima} °C`;
+
+//caja 2
+    
+    document.getElementById("icono").innerHTML = `http://openweathermap.org/img/wn/${imagen}.png`
+    document.getElementById("descripcion").innerHTML = descripcion
+
+})
 
 
 
