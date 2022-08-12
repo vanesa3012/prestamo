@@ -80,6 +80,7 @@ document.getElementById("ver").addEventListener("click", ()=>{
     const valor = document.createElement("div");
     valor.innerText = `Devolvés ${cantidad_cuotas} cuotas de $ ${monto_cuota} cada una.`;
     container_detalle.appendChild(valor);
+
 })
 
 
@@ -106,8 +107,21 @@ function traer_datos(){
          //guardo datos en json
         lista_clientes.push(usuario);
         localStorage.setItem("clientes", JSON.stringify(lista_clientes));
-        
-    })
+
+        Toastify({
+            text:"PRÉSTAMO OTORGADO!!",
+            duration: 2000,
+            gravity: "top",
+            position: "center",
+            style:{
+                fontSize: "25px",
+                fontFamily:"Times New Roman",
+                color: "#c0d923"
+            }
+
+        }).showToast();
+
+})
 }
 
 let obtener = document.getElementById("obtener");
@@ -123,6 +137,34 @@ function finalizar(){
 
 let saludar = document.getElementById("terminar");
 saludar.addEventListener("click", finalizar);
+
+//caja 1
+let temperaturaActual = document.getElementById("temperatura-actual")
+let temperaturaMax = document.getElementById("temperatura-max")
+let temperaturaMin = document.getElementById("temperatura-min")
+
+//caja 2
+
+let imagen = document.getElementById("icono")
+let temperaturaDescripcion = document.getElementById("descripcion")
+
+
+        //tempetura = data.main.temp
+        //tempeturaMaxima = data.main.temp_max
+        //tempeturaMinima = data.main.temp_min
+        //descrpcio = data.weather[0].description
+        //icono = data.weather[0].icon
+
+fetch("https://api.openweathermap.org/data/2.5/weather?q=Cordoba&lang=es&units=metric&appid=36498ac6bf1c3965a2397bae524a2d19")
+    .then(response=> response.json())
+    .then(data=>{
+        console.log("Temperatura", data.main.temp)
+        console.log("Temp. Max.", data.main.temp_max)
+        console.log("Temp. Min.", data.main.temp_min)
+        console.log(data.weather[0].description)
+        console.log(data.weather[0].icon)
+    })
+
 
 
 /*Creo array de objetos, contiene los préstamos otorgados a nuestros clientes. 
@@ -181,7 +223,7 @@ console.log("Total de préstamos solicitados en el dia:", prestamos_total_dia);
 //Ver porque no suma*/
 
 
-//Almaceno los datos del cliente que quiere el prestamo
+
 
 
 
