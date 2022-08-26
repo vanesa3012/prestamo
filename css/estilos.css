@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bree+Serif&family=Libre+Bodoni:ital@1&family=Lobster&family=Raleway:ital@1&family=Ubuntu&display=swap');
+
 
 *{
     margin: 0;
@@ -5,30 +7,404 @@
     box-sizing: border-box;
 }
 
-nav{
-    background-color: aqua;
-    width: 100%;
-    height: 100%;
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(to right, #ffefba, #ffffff);
 }
 
-.container-navegacion{
+/*HEADER*/
+header{
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cffcf2;
+    height: 130px;
+    padding: 15px;
+    box-shadow: 0px 5px 5px 0px teal;
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    font-family: 'Bree Serif', serif;
+    font-size: 40px;
+    margin-right: 25px;
+    
+}
+
+.fa-solid{
+    font-size: 70px;
+    color: #f7a17c;
+}
+
+.container-clima{
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+}
+
+.caja{
+    display: inline-block;
+}
+
+.caja1{
+    margin-right: 1.7rem;   
+}
+
+#icono{
+    width: 70px;
+}
+
+#ciudad{
+    text-align: center;
+}
+
+.titulo{
+    text-align: center;
+    padding: 10px;
+    margin-top: 3rem;
+    font-size: 80px;
+    color: rgb(39, 36, 36);
 }
 
 .container-inicial{
-    background-color:red;
-}
-
-.boton-simulador{
-    background-color: blueviolet;
-}
-
-#caja1{
-    display: inline-block;
-    text-align: left;
+    display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    border-color: azure;
-    
+    align-items: stretch;
+    margin-left: 18rem;
 }
+
+.container-inicial p{
+    font-size: 40px;
+    padding: 5px;   
+}
+
+strong{
+    font-size: 50px;
+}
+
+.container-calculador{
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitulo{
+    font-size: 40px;
+    padding: 30px;
+    margin-left: 3rem;
+    color: rgb(39, 36, 36);
+}
+
+.form-uno{
+    display: flex;
+    padding: 10px;
+}
+
+.input-uno{
+    display: flex;
+    box-shadow: 3px 2px 2px 3px teal;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20rem;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.pregunta1{
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+#prestamo{
+    height: 70px;
+    width: 200px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid rgb(124, 115, 116);
+    padding: 5px;
+    margin: 5px;
+    font-size: 30px;
+    color: black;
+    font-weight: 600;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+.input-uno input::placeholder {
+    font-size: 2rem;
+    color: black;
+}
+
+.selectores{
+    display: inline-block;
+    box-shadow: 3px 2px 2px 3px teal;
+    margin-left: 3rem;
+    font-size: 20px;
+    width: 30%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+pregunta2{
+    padding: 5px; 
+    text-align: center;  
+}
+
+select{
+    outline: none;
+    box-shadow: 0;
+    border: 0;
+    background-color: #dffff8;
+    max-width: 200px;
+	position: relative;
+    display: flex;
+    width: 18rem;
+    height: 2rem;
+    margin: auto;
+    margin-top: 1rem;
+    line-height: 2;
+    overflow: hidden;
+    border-radius: 2rem;
+    flex: 1;
+    padding: 0 .8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+select option{
+    font-weight: 600;
+}
+
+.btn-simular{
+    text-align: center;
+    padding: 50px;
+}
+
+.btn-simular button{
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 2px salmon;
+    background-color: #fabda2;
+    cursor: pointer;
+    transition: background-color .8s;
+}
+
+.btn-simular button:hover{
+    color: wheat;
+    background-color: rgb(245, 143, 106);
+}
+
+.container-devolver{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-devolverias{
+    display: flex;
+}
+
+.btn-devolverias p{
+    margin-left: 5rem;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.btn-devolverias input{
+    border: solid 2px teal;
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    width: 150px;
+}
+
+.btn-devolverias input::placeholder {
+    font-size: 1.5rem;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-devolverias input::placeholder{
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+}
+
+#devuelve{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#container-detalle{
+    display:flex;
+}
+
+.btn-detalle{
+    display: flex;
+    justify-items: center;
+    margin-top: 3rem;
+}
+
+.btn-detalle p{
+    margin-left: 5rem;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+}
+    
+.btn-detalle button{
+    border: solid 2px rgb(245, 113, 65);
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    width: 150px;
+    height: 50px;
+    margin-left: 1rem;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #fabda2;
+    transition: .8s;
+}
+
+.btn-detalle button:hover{
+    color: wheat;
+    background-color: rgb(245, 143, 106);
+}
+
+.container-btn{
+    display: flex;
+    justify-content:center;
+    margin-top: 8rem;
+}
+
+#obtener{
+    margin-right: 3rem;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 2px teal;
+    font-weight: 700;
+    font-size: 15px;
+    transition: .7s;
+}
+
+#obtener:hover{
+    background-color: teal;
+    color: white;
+}
+
+#terminar{
+    margin-left: 3rem;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 2px teal;
+    font-weight: 700;
+    font-size: 15px;
+    transition: .7s;
+}
+
+#terminar:hover{
+    background-color: teal;
+    color: white;
+}
+
+.container-form label{
+    font-size: 30px;
+}
+
+#nombre, #apellido,
+#dni{
+    height: 30px;
+    border: solid 2px teal;
+    border-radius: 3px;
+    outline: none;
+    margin-top: 3rem;
+    font-size: 17px;
+}
+
+#confirma{
+    height: 40px;
+    width: 100px;
+    margin-left: 2rem;
+    border: solid 2px teal;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: .8s;
+}
+
+#confirma:hover{
+    background-color: teal;
+    color: white;
+}
+
+/*Boton mis prestamos*/
+
+.container-final{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+/*footer*/
+
+footer{
+    border-top: 2px solid teal;
+}
+.container-footer .red{
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 2px 3px 2px teal;
+    text-align: left;
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+}
+
+.redes-sociales{
+    margin-left: 1.5rem;
+    display: flex;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.redes-sociales img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 3px;
+}
+
+.face{
+    margin-left: 10rem;
+}
+
+.insta, .twitter{
+    margin-left: 1rem;
+}
+
+.footer-logo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
