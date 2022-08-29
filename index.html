@@ -12,81 +12,81 @@
     <title>Te presto</title>
 </head>
 <body>
-    <header> 
-        <div class="container-logo">
-            <h1 class="logo">Te presto</h1> <i class="fa-solid fa-hand-holding-dollar"></i>
-        </div>
-        <div class="conteiner-clima">
-            <div class="caja caja1">
-                <h2 id="ciudad"></h2>
-                <h3 id="temperatura-actual"></h3>
-                <h3 id="temperatura-max"></h3>
-                <h3 id="temperatura-min"></h3>
+    <div class="contenedor">
+        <header> 
+            <div class="container-logo">
+                <h1 class="logo">Te presto</h1> <i class="fa-solid fa-hand-holding-dollar"></i>
             </div>
-            <div class="caja">
-                <img id="icono" src="" alt=""> 
-                <h3 id="descripcion"></h3>
-            </div>
-        </div>
-    </header>
-
-    <main id="main">
-        <h2 class="titulo">Préstamos</h2>
-        <div class="container-inicial">   
-            <p>Podés pedir hasta $<strong> 250.000</strong></p>
-            <p>En 36 cuotas fijas</p>
-        </div>
-
-        <div class="container-calculador">
-            <h2 class="subtitulo">Simulá tu préstamo</h2>
-
-            <form class="form-uno">            
-                <div class="input-uno">
-                    <p class="pregunta1">¿Cuánto necesitas?</p>   
-                    <input type="number" placeholder="$ 0" id="prestamo">
+            <div class="conteiner-clima">
+                <div class="caja caja1">
+                    <h2 id="ciudad"></h2>
+                    <h3 id="temperatura-actual"></h3>
+                    <h3 id="temperatura-max"></h3>
+                    <h3 id="temperatura-min"></h3>
                 </div>
-
-                <div class="selectores">
-                    <p class="pregunta2">¿En cuántas cuotas lo devolvés?</p>
-                    <select name="format" id="selector">
-                        <option selected disabled>Elige una opción</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
-                        <option value="9">9</option>
-                        <option value="12">12</option>
-                        <option value="18">18</option>
-                        <option value="24">24</option>
-                        <option value="36">36</option>
-                    </select>  
-                    <i></i>      
-                </div>     
-            </form> 
-
-            <div class="btn-simular">
-                <button id="simulador">Simular préstamo</button>
-            </div>
-
-
-            <div class="container-devolver">
-                <div class="btn-devolverias">
-                    <p>Devolverías</p>
-                    <input type="number" placeholder="$" id="devuelve">
+                <div class="caja">
+                    <img id="icono" src="" alt=""> 
+                    <h3 id="descripcion"></h3>
                 </div>
             </div>
+        </header>
 
-            <div id="container_detalle">
-                <div class="btn-detalle">
-                    <p>Mirá el detalle de las cuotas</p>
-                    <button id="ver">Detalle</button>
-                </div>       
+        <main id="main">
+            <h2 class="titulo">Préstamos</h2>
+            <div class="container-inicial">   
+                <p>Podés pedir hasta $<strong class="str"> 250.000</strong></p>
+                <p>En 36 cuotas fijas</p>
             </div>
 
-            <div class="container-btn">
-                <button id="obtener">Lo quiero!</button>
-                <button id="terminar">No, gracias.</button>
+            <div class="container-calculador">
+                <h2 class="subtitulo">Simulá tu préstamo</h2>
+
+                <form class="form-uno">            
+                    <div class="input-uno">
+                        <p class="pregunta1">¿Cuánto necesitas?</p>   
+                        <input type="number" placeholder="$ 0" id="prestamo">
+                    </div>
+
+                    <div class="selectores">
+                        <p class="pregunta2">¿En cuántas cuotas lo devolvés?</p>
+                        <select name="format" id="selector">
+                            <option selected disabled>Elige una opción</option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>        
+                    </div>     
+                </form> 
+
+                <div class="btn-simular">
+                    <button id="simulador">Simular préstamo</button>
+                </div>
+
+
+                <div class="container-devolver">
+                    <div class="btn-devolverias">
+                        <p>Devolverías</p>
+                        <input type="number" placeholder="$" id="devuelve">
+                    </div>
+                </div>
+
+                <div id="container_detalle">
+                    <div class="btn-detalle">
+                        <p>Mirá el detalle de las cuotas</p>
+                        <button id="ver">Detalle</button>
+                    </div>       
+                </div>
+
+                <div class="container-btn">
+                    <button id="obtener">Lo quiero!</button>
+                    <button id="terminar">No, gracias.</button>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
     <!-- <section id="section">
         <div class="container-final">
@@ -95,25 +95,26 @@
     </section> -->
     
 
-    <footer>
-        <div class="container-footer">
-            <h6 class="red">Seguinos en:</h6>
-        </div>
-
-        <div class="redes-sociales">
-            <img src="./img/face1.png" alt="" class="face">
-            <img src="./img/insta.png" alt="" class="insta">
-            <img src="./img/twitter-removebg-preview.png" alt="" class="twitter">
-        </div>
-
-        <div class="footer-logo">
-            <div class="pie">
-                <p class="logotipo">Te presto</p><i class="fa-solid fa-hand-holding-dollar" id="logo-pie"></i>
+        <footer>
+            <div class="container-footer">
+                <h6 class="red">Seguinos en:</h6>
             </div>
-            <p> <strong>&copy;2022 </strong>Todos los derechos reservados.
-            </p>
-        </div>
-    </footer>
+
+            <div class="redes-sociales">
+                <img src="./img/face1.png" alt="" class="face">
+                <img src="./img/insta.png" alt="" class="insta">
+                <img src="./img/twitter-removebg-preview.png" alt="" class="twitter">
+            </div>
+
+            <div class="footer-logo">
+                <div class="pie">
+                    <p class="logotipo">Te presto</p><i class="fa-solid fa-hand-holding-dollar" id="logo-pie"></i>
+                </div>
+                <p> <strong>&copy;2022 </strong>Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+    </div>
 
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
