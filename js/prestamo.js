@@ -108,7 +108,7 @@ function traer_datos(){
         e.preventDefault(); //para evitar que se vaya el formulario porque al estar al final se toma como un submit
         let nombre_usuario = document.getElementById("nombre");
         let apellido_usuario = document.getElementById("apellido");
-        let {dni_usuario} = document.getElementById("dni");
+        let dni_usuario = document.getElementById("dni");
         let usuario = {"nombre": nombre_usuario.value, "apellido": apellido_usuario.value, "dni": dni_usuario.value};
         
         lista_clientes.push(usuario);
@@ -133,6 +133,7 @@ function traer_datos(){
     })
 }
 
+
 let obtener = document.getElementById("obtener");
 obtener.addEventListener("click", traer_datos);
 
@@ -155,9 +156,6 @@ let arreglo_montos = [];
 
 function traer_monto(){
 
-    let miInput = document.getElementById("prestamo");
-    let selector = document.getElementById("selector");
-    let devuelve = document.getElementById("devuelve");
     let misPrestamos = {"Monto": miInput.value, "Cuotas": selector.value, "Devuelve": devuelve.value};
 
     arreglo_montos.push(misPrestamos);
@@ -165,7 +163,7 @@ function traer_monto(){
 
 }
 
-let btnPrestamo = document.getElementById("last");
+/*let btnPrestamo = document.getElementById("last");
 btnPrestamo.addEventListener("click", traer_monto);
 
 //Muestro todos los datos
@@ -175,10 +173,18 @@ function mostrar_datos(){
     let btnVer = document.createElement("table");
     btnVer.innerHTML = `
     <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th></th>
+        <th>Cuotas</th>
+        <th>Devuelve</th>
+    </tr>
+    <tr>
         <td>Nombre</td>
         <td>Apellido</td>
         <td>DNI</td>
-        <td>Monto</td>
+        <td></td>
         <td>Cuotas</td>
         <td>Devuelve</td>
     </tr>
@@ -186,15 +192,13 @@ function mostrar_datos(){
     section.appendChild(btnVer);
 
 
-    let infoClientes = JSON.parse(localStorage.getItem("clientes")); 
-    let infoMontos = JSON.parse(localStorage.getItem("montos"));
-
-    console.log(infoClientes, infoMontos);
+    JSON.parse(localStorage.getItem("clientes")); 
+    JSON.parse(localStorage.getItem("montos"));
 
 }
 
 let verPrestamos = document.getElementById("last");
-verPrestamos.addEventListener("click", mostrar_datos);
+verPrestamos.addEventListener("click", mostrar_datos); */
 
 
 //API
@@ -212,9 +216,6 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Cordoba&lang=es&units=m
         let imagen = data.weather[0].icon;
         let urlIcon = `http://openweathermap.org/img/wn/${imagen}.png`
         
-        
-        
-
       //capturo id y coloco la data obtenida de la api  
 //caja 1
     
@@ -231,8 +232,18 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Cordoba&lang=es&units=m
 
 })
 
-.catch( error => {
-    console.log(error)
+.catch( () => {
+    Swal.fire({
+        position: 'top',
+        width: 300,
+        background: '#81f7f7',
+        showClass: {
+            popup: 'animate__animated animate__bounceInDown'
+        },
+        icon: 'error',
+        title: 'Sin conexión, inténtalo nuevamente!',
+        showConfirmButton: true,
+    })
 })
 
 
