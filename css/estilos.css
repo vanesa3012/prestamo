@@ -79,7 +79,6 @@ header{
 .container-inicial p{
     font-size: 40px;
     padding: 5px;  
-    text-align: center;
 }
 
 .str{
@@ -430,11 +429,4 @@ footer{
 strong{
     font-size: 20px;
     
-}
-
-@media screen and (max-width:1020px){
-    .form-uno{
-        width: 100%;
-        flex-direction: column;
-    }
 }
